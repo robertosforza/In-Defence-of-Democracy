@@ -4,8 +4,8 @@
 /* Global font family: use EB Garamond for body and headings */
 body {
   font-family: 'EB Garamond', serif;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* Ensure headings also use EB Garamond */
@@ -21,6 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Adjust footnote pop-up size */
 a.sdfootnoteanc[data-footnote]::after {
   width: fit-content;
-  max-width: 60ch;
+  max-width: 80ch;
   display: inline-block;
 }
