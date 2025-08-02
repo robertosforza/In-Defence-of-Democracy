@@ -1,0 +1,26 @@
+/* Import EB Garamond font from Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global font family: use EB Garamond for body and headings */
+body {
+  font-family: 'EB Garamond', serif;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* Ensure headings also use EB Garamond */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'EB Garamond', serif;
+}
+
+/* Override any inline font declarations with !important */
+* {
+  font-family: 'EB Garamond', serif !important;
+}
+
+/* Adjust footnote pop-up size */
+a.sdfootnoteanc[data-footnote]::after {
+  width: fit-content;
+  max-width: 60ch;
+  display: inline-block;
+}
