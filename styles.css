@@ -1,26 +1,110 @@
-/* Import EB Garamond font from Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Global font family: use EB Garamond for body and headings */
+/* === Global Typography === */
+html {
+  font-size: 18px;
+  line-height: 1.55;
+  font-family: 'Merriweather', Georgia, serif;
+  color: #1a1a1a;
+  background: #fff;
+}
 body {
-  font-family: 'EB Garamond', serif;
-  margin-left: 10%;
-  margin-right: 10%;
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: 2rem;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #0f4761;
+}
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.7rem; border-bottom: 2px solid #e2e8f0; padding-bottom: .2rem; }
+h3 { font-size: 1.4rem; }
+p {
+  margin: 1rem 0;
+}
+a {
+  color: #0f4761;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-/* Ensure headings also use EB Garamond */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'EB Garamond', serif;
+/* === Table of Contents (TOC) === */
+#toc-container {
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  max-width: 20ch;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+#toc-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+#toc-container li {
+  margin: 0.2rem 0;
+}
+#toc-container a {
+  color: #2d3748;
+}
+#toc-container a.active {
+  font-weight: bold;
+  color: #0f4761;
 }
 
-/* Override any inline font declarations with !important */
-* {
-  font-family: 'EB Garamond', serif !important;
+/* === Blockquotes === */
+blockquote {
+  margin: 1rem 0 1.25rem;
+  padding: .75rem 1rem;
+  border-left: 3px solid rgba(15,71,97,0.3);
+  background: #f7fafc;
+}
+blockquote.verse {
+  line-height: 1.35;
+  background: #f9fbfd;
+  border-left-color: rgba(15,71,97,0.45);
+  white-space: pre-wrap;
+}
+.poem-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #0f4761;
+  margin: .6em 0 .2em 0;
+}
+.quote-credit {
+  display:block;
+  margin-top:.6rem;
+  color:#0d0d0d;
 }
 
-/* Adjust footnote pop-up size */
-a.sdfootnoteanc[data-footnote]::after {
-  width: fit-content;
-  max-width: 80ch;
-  display: inline-block;
+/* === Footnote Hover === */
+a.sdfootnoteanc {
+  position: relative;
+}
+a.sdfootnoteanc[data-footnote]:hover::after {
+  content: attr(data-footnote);
+  position: absolute;
+  left: 0;
+  top: 1.5em;
+  background: #2d3748;
+  color: #fff;
+  padding: .5rem;
+  border-radius: 4px;
+  max-width: 70ch;
+  white-space: normal;
+  z-index: 10;
+}
+
+/* === Dark Mode === */
+@media (prefers-color-scheme: dark) {
+  html { background: #0d0d0d; color: #e2e8f0; }
+  h1,h2,h3,h4,h5 { color: #63b3ed; border-color: #2d3748; }
+  a { color: #90cdf4; }
+  blockquote { background: #1a202c; border-left-color: rgba(144,205,244,0.4); }
+  blockquote.verse { background: #2d3748; border-left-color: rgba(144,205,244,0.6); }
 }
