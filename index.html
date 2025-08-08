@@ -1,75 +1,180 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
-<title></title>
-<meta content="LibreOffice 25.2.3.2 (Linux)" name="generator"/>
-<meta content="Roberto Sforza" name="author"/>
-<meta content="2025-04-07T10:23:00" name="created"/>
-<meta content="Roberto Sforza" name="changedby"/>
-<meta content="2025-07-29T15:44:00" name="changed"/>
-<meta content="16.0000" name="AppVersion"/>
-<link href="styles.css" rel="stylesheet"/>
-<style type="text/css">
-		@page { size: 8.27in 11.69in; margin-left: 0.79in; margin-right: 0.79in; margin-top: 0.98in; margin-bottom: 0.49in }
-		p { direction: ltr; margin-bottom: 0.1in; widows: 2; orphans: 2; text-align: left; line-height: 115%; background: transparent }
-		h1 { direction: ltr; margin-top: 0.25in; margin-bottom: 0.06in; color: #0f4761; orphans: 2; widows: 2; line-height: 116%; text-align: left; page-break-inside: avoid; background: transparent; page-break-after: avoid }
-		h1.western { font-family: "Aptos Display", serif; font-size: 20pt }
-		h1.cjk { font-size: 20pt; font-family: "游ゴシック Light" }
-		h1.ctl { font-size: 20pt; font-family: "Times New Roman" }
-		h2 { direction: ltr; margin-top: 0.11in; margin-bottom: 0.06in; color: #0f4761; orphans: 2; widows: 2; line-height: 116%; text-align: left; page-break-inside: avoid; background: transparent; page-break-after: avoid }
-		h2.western { font-family: "Aptos Display", serif; font-size: 16pt }
-		h2.cjk { font-size: 16pt; font-family: "游ゴシック Light" }
-		h2.ctl { font-size: 16pt; font-family: "Times New Roman" }
-		h3 { direction: ltr; margin-top: 0.11in; margin-bottom: 0.06in; color: #0f4761; orphans: 2; widows: 2; line-height: 116%; text-align: left; page-break-inside: avoid; background: transparent; page-break-after: avoid }
-		h3.western { font-size: 14pt }
-		h3.cjk { font-size: 14pt; font-family: "游ゴシック Light" }
-		h3.ctl { font-size: 14pt; font-family: "Times New Roman" }
-		p.sdfootnote { direction: ltr; margin-bottom: 0in; orphans: 2; text-align: left; line-height: 100%; widows: 2; font-size: 10pt; background: transparent }
-		h1.contents-heading-western { margin-top: 0.17in; margin-bottom: 0in; font-size: 16pt; so-language: en-US; line-height: 108% }
-		h1.contents-heading-cjk { margin-top: 0.17in; margin-bottom: 0in; font-size: 16pt; so-language: en-US; line-height: 108% }
-		h1.contents-heading-ctl { margin-top: 0.17in; margin-bottom: 0in; line-height: 108%; font-size: 16pt }
-		a:link { color: #156082; text-decoration: underline }
-		a.western:link { font-style: normal }
-
-	a.cjk:link { font-style: normal }
-		a:visited { color: #96607d; text-decoration: underline }
-		a.sdfootnoteanc { font-size: 57% }
-	</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>In Defence of Democracy</title>
+<meta name="author" content="Roberto Sforza" />
+<meta name="description" content="In Defence of Democracy — thesis website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-a.sdfootnoteanc[data-footnote] { position: relative; }
+  :root {
+    --bg: #ffffff;
+    --text: #0b1020;
+    --muted: #5b657a;
+    --brand: #0f4761;
+    --brand-2: #156082;
+    --accent: #e8f2f7;
+    --border: #e5e7eb;
+    --card: #ffffff;
+    --shadow: 0 10px 30px rgba(2, 12, 27, 0.08);
+    --maxw: 1150px;
+    --tocw: 300px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0f15;
+      --text: #e6edf3;
+      --muted: #9aa4b2;
+      --brand: #78c0e0;
+      --brand-2: #7ec8f3;
+      --accent: #0f1a24;
+      --border: #1e293b;
+      --card: #0d141c;
+      --shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    ::selection { background: #1f3a53; color: var(--text); }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; line-height: 1.6; }
+  a { color: var(--brand-2); text-underline-offset: 3px; }
+  a:hover { color: var(--brand); }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 22px 60px; }
+  header.site { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(180%) blur(10px); background: color-mix(in lab, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); }
+  .site-inner { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 22px; gap: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .25px; color: var(--text); text-decoration: none; }
+  .brand .logo { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--accent); border: 1px solid var(--border); box-shadow: var(--shadow); font-weight: 800; color: var(--brand); }
+  nav.top a { margin-left: 16px; text-decoration: none; color: var(--muted); font-weight: 500; }
+  nav.top a:hover { color: var(--brand); }
+  .hero { display: grid; grid-template-columns: 1fr; gap: 22px; padding: 56px 0 10px; }
+  .hero h1 { font-family: Merriweather, Georgia, "Times New Roman", serif; font-weight: 700; line-height: 1.2; margin: 0; font-size: clamp(2rem, 2.6vw + 1rem, 3.2rem); color: var(--brand); }
+  .hero h2 { font-family: Merriweather, Georgia, "Times New Roman", serif; font-weight: 400; margin: 4px 0 0; color: var(--text); opacity: .9; }
+  .hero .meta { color: var(--muted); font-size: .95rem; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 26px; }
+  @media (min-width: 1100px) {
+    .grid { grid-template-columns: minmax(0,1fr) var(--tocw); align-items: start; gap: 38px; }
+  }
+  aside.toc { position: sticky; top: 78px; border: 1px solid var(--border); border-radius: 16px; padding: 16px 16px; background: var(--card); box-shadow: var(--shadow); max-height: calc(100vh - 100px); overflow: auto; }
+  .toc h3 { margin: 6px 0 10px; font-size: .95rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .toc a { display: block; padding: 6px 6px; text-decoration: none; color: var(--muted); border-radius: 8px; }
+  .toc a.active, .toc a:hover { color: var(--text); background: var(--accent); }
+  .toc .lvl-1 { padding-left: 0; }
+  .toc .lvl-2 { padding-left: 10px; }
+  .toc .lvl-3 { padding-left: 20px; }
+  main.article { border: 1px solid var(--border); border-radius: 20px; background: var(--card); box-shadow: var(--shadow); padding: clamp(18px, 2.2vw, 32px); }
+  main.article :where(h1,h2,h3,h4) { scroll-margin-top: 90px; }
+  main.article h1 { font-family: Merriweather, Georgia, serif; color: var(--brand); border-bottom: 1px solid var(--border); padding-bottom: .2em; margin-top: 1.8em; }
+  main.article h2 { font-family: Merriweather, Georgia, serif; color: var(--brand); margin-top: 1.6em; }
+  main.article h3 { font-weight: 700; margin-top: 1.2em; }
+  main.article p { margin: 0.6em 0; }
+  main.article blockquote { border-left: 4px solid color-mix(in lab, var(--brand) 65%, #0000); background: color-mix(in lab, var(--accent) 85%, transparent); margin: 1em 0; padding: .8em 1em; }
+  .footnote-ref { font-size: .85em; vertical-align: super; }
+  .lang-switch { display: inline-flex; gap: 10px; align-items: center; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+  .toolbar { display: flex; gap: 10px; align-items: center; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px; border:1px solid var(--border); background: var(--card); text-decoration:none; color: var(--text); box-shadow: var(--shadow); font-weight:600; }
+  .btn:hover { background: var(--accent); }
+  .muted { color: var(--muted); }
+  .footer { max-width: var(--maxw); margin: 40px auto 60px; padding: 0 22px; color: var(--muted); display:flex; justify-content:space-between; border-top:1px solid var(--border); padding-top:18px; }
+  .back-to-top { position: fixed; right: 18px; bottom: 18px; z-index: 40; display:none; }
+  .back-to-top.show { display:block; }
+  .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: .9em; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 6px; padding: 0 .3em; background: var(--accent); }
+  /* Restore any inline footnote hover styles from original as a base */
+  a.sdfootnoteanc[data-footnote] {
+  position: relative;
+}
 a.sdfootnoteanc[data-footnote]::after {
   content: attr(data-footnote);
   position: absolute;
-  left: 0;
-  top: 1.2em;
-  background: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 6px 8px;
-  max-width: 280px;
+  top: 1.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  max-width: min(90vw, 420px);
+  min-width: 160px;
   white-space: normal;
-  color: #333;
-  font-size: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  color: var(--text);
+  font-size: 0.85rem;
+  box-shadow: var(--shadow);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 1000;
 }
 a.sdfootnoteanc[data-footnote]:hover::after {
   opacity: 1;
+  transform: translateX(-50%) translateY(4px);
 }
-</style><style>
-/* Poem/quote styling */
-.blockquote, blockquote { margin: 1rem 0 1.25rem; padding: .75rem 1rem; border-left: 3px solid rgba(15,71,97,0.3); background: #f7fafc; }
-blockquote.verse { line-height: 1.35; background: #f9fbfd; border-left-color: rgba(15,71,97,0.45); white-space: pre-wrap; }
-.poem-title { font-size: 1.1em; font-weight: bold; color: #0f4761; margin: .6em 0 .2em 0; }
-.quote-credit { display:block; margin-top:.6rem; color:#0d0d0d; }
-a.sdfootnoteanc[data-footnote]::after { max-width: 70ch; }
-</style></head>
-<body dir="ltr" lang="en-GB" link="#156082" vlink="#96607d"><p align="right" style="line-height: 100%; margin-bottom: 0.11in"><font face="Garamond, serif"><b><a href="index_it.html">Versione italiana</a></b></font></p>
+  /* Tables */
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 8px 10px; }
+  thead th { background: var(--accent); }
+  code, pre { background: color-mix(in lab, var(--accent) 70%, transparent); border: 1px solid var(--border); padding: 2px 6px; border-radius: 6px; }
+/* Hide list bullets for quote blocks preceding signature lines */
+  .article ul.no-bullets { list-style: none; padding-left: 0; margin-left: 0; }
+  .article ul.no-bullets > li::marker { content: ""; }
+
+  /* Remove bullets for signature-only list items */
+  .article li.no-marker { list-style: none; padding-left: 0; margin-left: 0; }
+  .article li.no-marker::marker { content: ""; }
+  .article p.signature { text-align: center; margin: 0.2em 0 0.6em; font-style: normal; }
+
+
+/* Force Garamond throughout article content */
+main.article, main.article * {
+  font-family: Garamond, serif !important;
+}
+/* Keep headings readable weight */
+main.article h1, main.article h2, main.article h3, main.article h4 { 
+  font-weight: 700;
+}
+/* Signature line style */
+main.article .signature {
+  text-align: center;
+  margin: 0.4em 0 0.8em;
+  font-style: normal;
+}
+/* Hide bullets for signature-only list items if any remain */
+main.article li.no-marker { list-style: none; padding-left: 0; margin-left: 0; }
+main.article li.no-marker::marker { content: ""; }
+
+</style>
+</head>
+<body>
+  <header class="site">
+    <div class="site-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <div class="logo">ID</div>
+        <span>In Defence of Democracy</span>
+      </a>
+      <div class="toolbar">
+        <a class="btn" href="index_it.html" title="Versione italiana">IT Version</a>
+        <a class="btn" href="#contents">Contents</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap" id="top">
+    <section class="hero">
+      <div>
+        <h1>In Defence of Democracy</h1>
+        <h2>The Worst Form of Government, Except for All the Others</h2>
+        <p class="signature" align="center">– A Liberal Analysis by Roberto Sforza</p>
+      </div>
+    </section>
+
+    <div class="grid">
+      <main id="content" class="article" role="main" aria-label="Main article">
+        <!-- BEGIN ORIGINAL CONTENT -->
+        <p align="right" style="line-height: 100%; margin-bottom: 0.11in"><font face="Garamond, serif"><b><a href="index_it.html">Versione italiana</a></b></font></p>
 <div dir="ltr" id="Section1"><p align="center" style="line-height: 100%; margin-bottom: 0.11in">
 <font face="Garamond, serif"><font size="5" style="font-size: 18pt"><b>In
 	Defence of Democracy:</b></font></font></p>
@@ -266,10 +371,7 @@ a.sdfootnoteanc[data-footnote]::after { max-width: 70ch; }
 <p align="center" style="line-height: 100%; margin-top: 0.17in; margin-bottom: 0in">
 	“<font face="Garamond, serif"><i>Time is the one gift that not
 	even the most grateful heart can ever return</i></font><font face="Garamond, serif">.”</font></p>
-<ul>
-<li><p align="right" style="line-height: 100%; margin-bottom: 0.11in">
-<font face="Garamond, serif">Lucius Annaeus Seneca<a class="sdfootnoteanc" data-footnote="Seneca. (ca. 65 CE). Letters to Lucilius (Letter 1,3)." href="#sdfootnote1sym" name="sdfootnote1anc"><sup>1</sup></a></font></p></li>
-</ul>
+<p class="signature" align="center">– Lucius Annaeus Seneca<a class="sdfootnoteanc" data-footnote="Seneca. (ca. 65 CE). Letters to Lucilius (Letter 1,3)." href="#sdfootnote1sym" name="sdfootnote1anc"><sup>1</sup></a></p>
 <p align="center" style="line-height: 100%; margin-left: 0.5in; margin-bottom: 0.11in">
 <br/>
 <br/>
@@ -629,10 +731,7 @@ a.sdfootnoteanc[data-footnote]::after { max-width: 70ch; }
 <br/>
 <br/>
 </p>
-<ul>
-<li><p align="right" style="line-height: 100%; margin-bottom: 0.11in">
-<font face="Garamond, serif">Charles Aznavour<a class="sdfootnoteanc" data-footnote="​ Aznavour, C. (1960). Liberté [Song]. https://www.youtube.com/watch?v=ymBsylbbf5w ; see Annex C: Liberté." href="#sdfootnote7sym" name="sdfootnote7anc"><sup>7</sup></a></font></p></li>
-</ul>
+<p class="signature" align="center">– <font face="Garamond, serif">Charles Aznavour<a class="sdfootnoteanc" data-footnote="​ Aznavour, C. (1960). Liberté [Song]. https://www.youtube.com/watch?v=ymBsylbbf5w ; see Annex C: Liberté." href="#sdfootnote7sym" name="sdfootnote7anc"><sup>7</sup></a></font></p>
 <h1 class="western" style="line-height: 150%"><a name="_Toc194925602"></a>
 <font color="#000000"><font face="Garamond, serif"><b>Notes by the
 	Author</b></font></font></h1>
@@ -6592,9 +6691,9 @@ a.sdfootnoteanc[data-footnote]::after { max-width: 70ch; }
 <p align="center" style="line-height: 100%; margin-bottom: 0in"><br/>
 </p>
 <ul>
-<li><p align="right" style="line-height: 100%; margin-bottom: 0in"><font face="Garamond, serif">Charles
+<p class="signature">– <p align="right" style="line-height: 100%; margin-bottom: 0in"><font face="Garamond, serif">Charles
 		Aznavour </font>
-</p></li>
+</p></p>
 </ul>
 <p align="center" style="line-height: 100%; margin-bottom: 0in"><br/>
 </p>
@@ -9077,5 +9176,91 @@ a.sdfootnoteanc[data-footnote]::after { max-width: 70ch; }
 <p align="center" style="line-height: 100%; margin-bottom: 0in"><font face="Garamond, serif">Roberto
 	Sforza</font></p>
 </div>
+        <!-- END ORIGINAL CONTENT -->
+      </main>
+
+      <aside class="toc" aria-label="Table of contents">
+        <h3>On this page</h3>
+        <nav id="toc"></nav>
+        <div style="margin-top:10px; font-size:.9rem" class="muted">
+          Tip: Press <span class="kbd">/</span> to search headings.
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <a href="#top" class="btn back-to-top" id="backToTop" aria-label="Back to top">↑ Top</a>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Roberto Sforza</div>
+    <div class="muted">Built with plain HTML/CSS/JS. Dark mode supported.</div>
+  </footer>
+
+<script>
+  // Build TOC from h1/h2/h3 inside main
+  (function() {
+    const main = document.querySelector('main.article');
+    const toc = document.getElementById('toc');
+    if (!main || !toc) return;
+
+    const headings = main.querySelectorAll('h1, h2, h3');
+    const list = document.createElement('div');
+
+    headings.forEach(h => {
+      const text = (h.textContent || '').trim();
+      if (!text) return;
+      if (!h.id) {
+        h.id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      }
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.textContent = text;
+      a.className = h.tagName === 'H1' ? 'lvl-1' : (h.tagName === 'H2' ? 'lvl-2' : 'lvl-3');
+      list.appendChild(a);
+    });
+    toc.appendChild(list);
+
+    // Active link on scroll
+    const links = toc.querySelectorAll('a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const link = toc.querySelector(`a[href="#${id}"]`);
+        if (link) link.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { rootMargin: "-60% 0px -35% 0px", threshold: 0.01 });
+    headings.forEach(h => observer.observe(h));
+  })();
+
+  // Back to top visibility
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 800) btt.classList.add('show'); else btt.classList.remove('show');
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Quick heading search on '/'
+  let lastKey = 0;
+  window.addEventListener('keydown', (e) => {
+    if (e.key === '/' && Date.now() - lastKey > 300) {
+      e.preventDefault();
+      const q = prompt('Search headings...');
+      if (!q) return;
+      const h = Array.from(document.querySelectorAll('main.article h1, h2, h3'))
+        .find(el => el.textContent.toLowerCase().includes(q.toLowerCase()));
+      if (h) { location.hash = '#' + h.id; h.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+    lastKey = Date.now();
+  });
+</script>
+
+
+
+
+
+
+
 </body>
 </html>
